@@ -6,6 +6,9 @@
 ## Introduction
 AriaNg is a modern web frontend making [aria2](https://github.com/aria2/aria2) easier to use. AriaNg is written in pure html & javascript, thus it does not need any compilers or runtime environment. You can just put AriaNg in your web server and open it in your browser. AriaNg uses responsive layout, and supports any desktop or mobile devices.
 
+## Mod
+This version removed the setting value max limit.
+
 ## Features
 1. Pure Html & Javascript, no runtime required
 2. Responsive design, supporting desktop and mobile devices
