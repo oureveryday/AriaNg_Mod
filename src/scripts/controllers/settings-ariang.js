@@ -56,6 +56,7 @@
             sessionSettings: ariaNgSettingService.getAllSessionOptions(),
             rpcSettings: ariaNgSettingService.getAllRpcSettings(),
             isSupportBlob: ariaNgFileService.isSupportBlob(),
+            isSupportDarkMode: ariaNgSettingService.isBrowserSupportDarkMode(),
             importSettings: null,
             exportSettings: null,
             exportSettingsCopied: false
@@ -92,7 +93,7 @@
             $scope.context.titlePreview = getFinalTitle();
         };
 
-        $rootScope.swipeActions.extentLeftSwipe = function () {
+        $rootScope.swipeActions.extendLeftSwipe = function () {
             var tabIndex = -1;
 
             if (!$scope.isCurrentGlobalTab()) {
@@ -107,7 +108,7 @@
             }
         };
 
-        $rootScope.swipeActions.extentRightSwipe = function () {
+        $rootScope.swipeActions.extendRightSwipe = function () {
             var tabIndex = -1;
 
             if (!$scope.isCurrentGlobalTab()) {
@@ -136,6 +137,11 @@
             }
 
             $scope.updateTitlePreview();
+        };
+
+        $scope.setTheme = function (value) {
+            ariaNgSettingService.setTheme(value);
+            $rootScope.setTheme(value);
         };
 
         $scope.setDebugMode = function (value) {
@@ -177,6 +183,14 @@
         $scope.setRPCListDisplayOrder = function (value) {
             setNeedRefreshPage();
             ariaNgSettingService.setRPCListDisplayOrder(value);
+        };
+
+        $scope.setSwipeGesture = function (value) {
+            ariaNgSettingService.setSwipeGesture(value);
+        };
+
+        $scope.setDragAndDropTasks = function (value) {
+            ariaNgSettingService.setDragAndDropTasks(value);
         };
 
         $scope.setAfterCreatingNewTask = function (value) {
